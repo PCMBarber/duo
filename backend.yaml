@@ -34,7 +34,7 @@ spec:
       containers:
       - name: backend
         imagePullPolicy: Always
-        image: stratcastor/duo-backend:latest
+        image: gcr.io/lbg-python-cohort-8/piers-duo:latest
         ports:
         - containerPort: 5500
 

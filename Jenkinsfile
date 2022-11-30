@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     if (env.GIT_BRANCH == 'development') {
-                    sh 'docker build -t stratcastor/duo-backend:latest -t stratcastor/duo-backend:$BUILD_NUMBER .'
+                    sh 'docker build -t gcr.io/lbg-python-cohort-8/piers-duo:latest -t gcr.io/lbg-python-cohort-8/piers-duo:$BUILD_NUMBER .'
                     } else {
                         sh "echo 'Build not required!'"
                     }
@@ -17,8 +17,8 @@ pipeline {
                 script {
                     if (env.GIT_BRANCH == 'development') {
                         sh '''
-                        docker push stratcastor/duo-backend:latest
-                        docker push stratcastor/duo-backend:$BUILD_NUMBER
+                        docker push gcr.io/lbg-python-cohort-8/piers-duo:latest
+                        docker push gcr.io/lbg-python-cohort-8/piers-duo:$BUILD_NUMBER
                         '''
                     } else {
                         sh "echo 'Push not required!'"
