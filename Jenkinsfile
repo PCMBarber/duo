@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'echo $GIT_BRANCH'
                 script {
                     if (env.GIT_BRANCH == 'dev') {
                         sh '''
